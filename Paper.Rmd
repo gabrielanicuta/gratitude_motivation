@@ -7,7 +7,7 @@ author:
     affiliation   : "1"
     corresponding : yes    # Define only one corresponding author
     address       : "Toma Cosma Street, Nr.2, Iasi, Romania"
-    email         : "my@email.com"
+    email         : "gabriela.nicuta@uaic.ro"
     role: # Contributorship roles (e.g., CRediT, https://credit.niso.org/)
       - "Conceptualization"
       - "Writing - Original Draft Preparation"
@@ -76,7 +76,7 @@ header-includes   :
 ---
 
 ```{r setup, include = FALSE}
-  library(papaja)
+  library(papaja);library(kableExtra);library(foreign)
   r_refs("r-references.bib")
 ```
 

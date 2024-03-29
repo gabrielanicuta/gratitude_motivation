@@ -30,22 +30,21 @@ load(file = "Totals.RData"); names(ds)
 ## Setting-up the model ####
 m <- '
   # First regression paths
-  AMOT.T2 ~ B1*AMOT.T1 + B10*GRAT.T1
-  EXRE.T2 ~ B2*EXRE.T1 + B11*GRAT.T1
-  INRE.T2 ~ B3*INRE.T1 + B12*GRAT.T1
-  IDRE.T2 ~ B5*IDRE.T1 + B13*GRAT.T1
-  INTR.T2 ~ B6*INTR.T1 + B14*GRAT.T1
+  AMOT.T2 ~ AMOT.T1 + GRAT.T1
+  EXRE.T2 ~ EXRE.T1 + GRAT.T1
+  INRE.T2 ~ INRE.T1 + GRAT.T1
+  IDRE.T2 ~ IDRE.T1 + GRAT.T1
+  INTR.T2 ~ INTR.T1 + GRAT.T1
 
   # Second regression paths
-  COPE.T2 ~ B3*COPE.T1 + B4*GRAT.T1 + B15*AMOT.T2 + B17*EXRE.T2 + B19*INRE.T1 + B21*IDRE.T1 + B23*INTR.T1
-  TAPE.T2 ~ B6*TAPE.T1 + B5*GRAT.T1 + B16*AMOT.T2 + B18*EXRE.T2 + B20*INRE.T1 + B22*IDRE.T1 + B24*INTR.T1
+  COPE.T2 ~ COPE.T1 + GRAT.T1 + AMOT.T2 + EXRE.T2 + INRE.T2 + IDRE.T2 + INTR.T2
+  TAPE.T2 ~ TAPE.T1 + GRAT.T1 + AMOT.T2 + EXRE.T2 + INRE.T2 + IDRE.T2 + INTR.T2
 
   # Covariances on mediators residuals
   AMOT.T2 ~~ EXRE.T2 + INRE.T2 + IDRE.T2 + INTR.T2
   EXRE.T2 ~~ INRE.T2 + IDRE.T2 + INTR.T2
   INRE.T2 ~~ IDRE.T2 + INTR.T2
   IDRE.T2 ~~ INTR.T2
-
 '
 
 ## Assessing model ####

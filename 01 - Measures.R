@@ -12,7 +12,6 @@ getRezAlpha <- function(a) {
            round(as.numeric(a$feldt$upper.ci), 2))
   return(tmp)}
 
-
 # Loading dataset and computing scoring key ####
 load(file = "Raw data.RData")
 key <- list(

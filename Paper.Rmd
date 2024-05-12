@@ -1,7 +1,6 @@
 ---
 title             : "The title"
 shorttitle        : "Title"
-
 author: 
   - name          : "Gabriela Elena Nicuță"
     affiliation   : "1"
@@ -9,6 +8,7 @@ author:
     address       : "Toma Cosma Street, Nr.2, Iasi, Romania"
     email         : "gabriela.nicuta@uaic.ro"
     role: # Contributorship roles (e.g., CRediT, https://credit.niso.org/)
+      - "Equal contribution"
       - "Conceptualization"
       - "Writing - Original Draft Preparation"
       - "Writing - Review & Editing"
@@ -22,12 +22,12 @@ author:
   - name          : "Cristian Opariuc-Dan"
     affiliation   : "2,3"
     role:
+      - "Equal contribution"
       - "Writing - Original Draft Preparation"
       - "Writing - Review & Editing"
       - "Methodology"
       - "Data curation"
       - "Formal analysis"
-
 affiliation:
   - id            : "1"
     institution   : "Al. I. Cuza University, Iasi, Romania"
@@ -35,12 +35,9 @@ affiliation:
     institution   : "Bucharest University, Bucharest, Romania"
   - id            : "3"
     institution   : "Ovidius University, Constanta, Romania"
-
 authornote: |
   Add complete departmental affiliations for each author here. Each new line herein must be indented, like this line.
-
   Enter author note here.
-
 abstract: |
   One or two sentences providing a **basic introduction** to the field,  comprehensible to a scientist in any discipline.
   Two to three sentences of **more detailed background**, comprehensible  to scientists in related disciplines.
@@ -50,13 +47,13 @@ abstract: |
   One or two sentences to put the results into a more **general context**.
   Two or three sentences to provide a **broader perspective**, readily comprehensible to a scientist in any discipline.
   
-  <!-- https://tinyurl.com/ybremelq -->
   
+  <!-- https://tinyurl.com/ybremelq -->
 keywords          : "keywords"
 wordcount         : "X"
-bibliography      : "r-references.bib"
+bibliography      : ["r-references.bib", "Gratitude.bib"]
 floatsintext      : no
-linenumbers       : yes
+linenumbers       : no
 draft             : no
 mask              : no
 figurelist        : no
@@ -88,22 +85,55 @@ header-includes   :
 
 # Introduction
 \justify
-[TO BE DONE]
+[TO BE DONE BY GABI]
+
+
+## The present study
+
+```{r Model, fig.align='center', fig.cap='Theoretical mediation model', out.width=500}
+  knitr::include_graphics("Documents/Model.png")
+```
+\center _Please Insert Fig. \@ref(fig:Model) around here_ \justify
 
 # Methods
-We report how we determined our sample size, all data exclusions (if any), all manipulations, and all measures in the study. <!-- 21-word solution (Simmons, Nelson & Simonsohn, 2012; retrieved from http://ssrn.com/abstract=2160588) -->
+A path mediation model was used and the parameters were estimated using MLM (Mean adjusted Maximum Likelihood) robust method. Satorra-Bentler correction, was used for global fit testing because the assumption of multivariate normality was not fulfilled.
 
-## Participants
 
-## Material
-
-## Procedure
-
-## Data analysis
 We used `r cite_r("r-references.bib")` for all our analyses.
+## Participants and Procedure
 
+## Measurements
 
 # Results
+## Overview of data analysis
+
+
+## Preliminary analysis
+
+## Corelation analysis
+
+## Model analysis
+```{r hypothesis, echo = FALSE, include = FALSE}
+  source("03 - Model analysis.R")
+```
+The convergence was acquired after `r fit.rez[1,1]` iterations, estimating `r fit.rez[1,2]` parameters, based on `r fit.rez[1,3]` cases, resulting an over identified model with marginal fit indices (\(\chi\)^2^=`r fit.rez[1,4]`, df=`r fit.rez[1,5]`, p `r fit.rez[1,6]`, CFI=`r fit.rez[1,7]`, SRMR=`r fit.rez[1,8]`, RMSEA= `r fit.rez[1,9]`, p `r fit.rez[1,12]`,  90% CI [`r fit.rez[1,10]`, `r fit.rez[1,11]`]).
+
+```{r Model-B, fig.align='center', fig.cap='Mediation model. Unstandardized coefficients', out.width=500}
+  knitr::include_graphics("Documents/B_Model.png")
+```
+```{r Model-Beta, fig.align='center', fig.cap='Mediation model. Standardized coefficients', out.width=500}
+  #knitr::include_graphics("Documents/Beta_Model.png")
+```
+\center _Please Insert Figures \@ref(fig:Model-B) and \@ref(fig:Model-Beta) around here_ \justify
+
+Two positive and marginally significant indirect effects were identified, from the initial measurement of *gratitude* to the final measurement of *contextual performance*, mediated by the final measurement of *intrinsic motivation* (B=`r i=29; effects[i,4]`, z=`r effects[i,6]`, p=`r effects[i,7]`, \(\beta\)=`r effects[i,8]`), and from the initial measurement of *gratitude* to the final measurement of *task performance*, mediated by the final measurement of *identified regulation* (B=`r i=33; effects[i,4]`, z=`r effects[i,6]`, p=`r effects[i,7]`, \(\beta\)=`r effects[i,8]`). The initial measurements for *gratitude* were positively and marginally significantly associated with the final measurements for *intrinsic motivation* (B=`r i=10; effects[i,4]`, z=`r effects[i,6]`, p=`r effects[i,7]`, \(\beta\)=`r effects[i,8]`), and the final measurements of *intrinsic motivation* were positively and statistically significantly associated with the final measurements of *contextual performance* (B=`r i=17; effects[i,4]`, z=`r effects[i,6]`, p=`r effects[i,7]`, \(\beta\)=`r effects[i,8]`). The initial measurements for *gratitude* were also positively and statistically significantly associated with *identified regulation*, and the final measurements for *identified regulation* were positively and statistically significantly associated with *task performance* (B=`r i=23; effects[i,4]`, z=`r effects[i,6]`, p=`r effects[i,7]`, \(\beta\)=`r effects[i,8]`), therefore both mediated effects were marginally significant and positive.
+
+No other indirect association were observer, however our data suggested a positive and statistically significant association between the final measurements for *intrinsic motivation* and the final measurements for *task performance* (B=`r i=24; effects[i,4]`, z=`r effects[i,6]`, p=`r effects[i,7]`, \(\beta\)=`r effects[i,8]`). Statistically significant positive associations were also observed between the initial measurements of *gratitude* and final measurements of *identified regulation* (B=`r i=7; effects[i,4]`, z=`r effects[i,6]`, p=`r effects[i,7]`, \(\beta\)=`r effects[i,8]`), and *intrinsic motivation* (B=`r i=10; effects[i,4]`, z=`r effects[i,6]`, p=`r effects[i,7]`, \(\beta\)=`r effects[i,8]`), whereas negative associations were observed with the final measurements of *amotivation* (B=`r i=2; effects[i,4]`, z=`r effects[i,6]`, p=`r effects[i,7]`, \(\beta\)=`r effects[i,8]`), and *introjected regulation* (B=`r i=5; effects[i,4]`, z=`r effects[i,6]`, p=`r effects[i,7]`, \(\beta\)=`r effects[i,8]`). All longitudinal associations between the same variables measured at the initial and final moments were statistically significant and no other associations were observed.
+
+
+(B=`r i=5; effects[i,4]`, z=`r effects[i,6]`, p=`r effects[i,7]`, \(\beta\)=`r effects[i,8]`). 
+
+
 
 # Discussion
 

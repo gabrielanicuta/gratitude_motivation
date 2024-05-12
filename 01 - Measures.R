@@ -2,9 +2,6 @@
 if(!require(dplyr)) install.packages("dplyr")
 if(!require(dplyr)) install.packages("dplyr")
 library(dplyr); library(psych)
-p <- function(x, digits = 3){
-  if (x < 10^-digits) return(paste('<', 10^-digits))
-  paste('=', round(x, 3))}
 getRezAlpha <- function(a) {
   tmp <- c(a$title,
            round(as.numeric(a$total[1]), 2),
@@ -95,7 +92,6 @@ crnb <- rbind(crnb, getRezAlpha(a))
 
 ## Removing first row and set row names to null ####
 crnb <- crnb[-1,]; rownames(crnb) <- NULL
-
 
 # Compute total scores and save final dataset ####
 scores <- psych::scoreItems(keys = key, items = ds, totals = T, missing = T, impute = "median")

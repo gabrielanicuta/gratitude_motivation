@@ -101,7 +101,7 @@ effects$rhs <- c("Amotivation (T1)", "Gratitude (T1)", "Extrinsic regulation (T1
 colnames(effects) <- c("Outcomes", " ", "Predictors", "Estimator", "SE", "z", "p", "Beta")
 
 ## Show tables in Viewer and removing objects ####
-rm(ds, m.sem, rez, m, getFit)
+rm(ds, m.sem, m, getFit)
 rownames(fit.rez) <- NULL; fit.rez
 expss_output_viewer(); as.etable(fit.rez); expss_output_default()
 effects; expss_output_viewer(); as.etable(effects); expss_output_default()

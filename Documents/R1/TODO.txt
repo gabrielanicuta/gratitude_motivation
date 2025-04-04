@@ -1,0 +1,15 @@
+Buna ziua!
+
+Atasez la acest mail articolul trimis la PAID, pe care am inceput sa adaug modificari, precum si letter of changes (unde am inceput sa ofer raspunsuri).
+In scrisoare am subliniat cu galben acele pasaje care tin de partea de analiza a datelor. Va rog, cand puteti, sa va uitati peste ele.
+Principalele comentarii legate de analiza datelor:
+- reviewerii vor o analiza de putere pentru a determina daca lotul este adecvat pentru a pune in evidenta efectele mici
+- un reviewer spune ca nu am calculat efectele indirecte (ceea ce este fals) - dar ne sugereaza bootstrapping si sa introducem intervale de incredere
+- sa raportam si TLI si SRMR la model
+- sa explicam mai bine ce analiza am folosit (un reviewer intreaba daca am folosit SEM sau modele diferinte in PROCESS - nici nu cred ca a citit cu atentie)
+- de ce am folosit suma in loc de medie pentru scor total
+- cum am tratat non-normalitatea datelor si de ce am ales tehnici robuste in testarea modelului
+- un reviewer cere adaugarea in model a recunostintei la T2 (eu cred ca nu are niciun sens si nu am vazut modele de mediere in doua valuri unde VI sa apara de doua ori, si la T1 si la T2... dar trebuie dat un raspuns).
+
+Multumesc frumos pentru ajutor si tinem legatura!
+Gabriela Nicuta

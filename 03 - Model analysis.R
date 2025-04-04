@@ -67,16 +67,23 @@ m <- '
 '
 
 ## Assessing model ####
-m.sem <- sem(model = m, data = ds, fixed.x = F, meanstructure = F,
+m.sem <- sem(model = m, data = ds, fixed.x = F, meanstructure = F, #se = "boot", bootstrap = 1000, iseed = 34534,
              missing = "listwise", estimator = "MLM", auto.var = F,  fixed.x = F, check.start = T)
+
 cat("\14")
 rez <- summary(m.sem, fit.measures = T, standardized = T, rsquare = T); rez
+
+fitMeasures(m.sem, c("gfi", "agfi", "tli", "rmsea","srmr"))
 
 ## Returning values - Fit indexes ####
 fit.rez <- data.frame(NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA)
 colnames(fit.rez) <- c("Iterations", "Parameters", "N", "Chi sqr", "df", "p Chi sqr", "CFI", "SRMR",
                        "RMSEA", "95% CI Lower", "95% CI Upper", "p RMSEA")
 fit.rez <- rbind(fit.rez, getFit(rez)); fit.rez <- fit.rez[-1, ]
+
+parameterestimates(m.sem)
+standardizedSolution(m.sem)
+
 ## Returning values - Coefficients ####
 effects <- rez$pe %>%
   filter(op == "~" | op == ":=") %>%

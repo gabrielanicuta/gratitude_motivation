@@ -14,6 +14,7 @@ load(file = "Raw data.RData")
 key <- list(
   # Trait gratitude ####
   GRAT.T1 = c('gq1', 'gq2', 'gq3', 'gq4', 'gq5', 'gq6'),
+  GRAT.T2 = c('t2_gq1', 't2_gq2', 't2_gq3', 't2_gq4', 't2_gq5', 't2_gq6'),
 
   # Work motivation ####
   ## Amotivation ####
